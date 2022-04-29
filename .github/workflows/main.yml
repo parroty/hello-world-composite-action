@@ -23,3 +23,14 @@ jobs:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
+  hello_world_job_original:
+    runs-on: ubuntu-latest
+    name: A job to say hello (original)
+    steps:
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: ./.github/actions/greeter-not-good
+        with:
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
