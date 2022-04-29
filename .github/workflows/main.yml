@@ -29,7 +29,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - id: foo
-        uses: ./.github/actions/greeter-not-good
+        uses: ./.github/actions/greeter-original
         with:
           who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
